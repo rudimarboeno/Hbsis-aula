@@ -51,7 +51,7 @@ namespace Atividade___01
 
                 int.TryParse(Console.ReadLine(), out int idade);
 
-                if (idade >= 18)
+                if (idade > 18)
                 {
                     Console.Clear();
                     Console.WriteLine("");
