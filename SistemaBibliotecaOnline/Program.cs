@@ -18,7 +18,7 @@ namespace SistemaBibliotecaOnline
             while(opcaoMenu !=3)
             {
                 if (opcaoMenu == 1)
-                    AlocarumLivro();
+                    AlocarumLivro(); 
 
                 if (opcaoMenu == 2)
                     DesalocarUmlivro();
