@@ -53,7 +53,7 @@ namespace Atividade___01
 
                 if (idade > 18)
                 {
-                    Console.Clear();
+                    Console.Clear(); 
                     Console.WriteLine("");
                     Console.WriteLine("Parabén você pode beber");
                     Console.WriteLine("Obrigado por uzar o nosso sistema");
