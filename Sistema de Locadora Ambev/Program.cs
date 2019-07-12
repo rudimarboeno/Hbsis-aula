@@ -106,7 +106,7 @@ namespace Sistema_de_Locadora_Ambev
                 Console.WriteLine("Digite o nome do veiculo a ser pesquisado:");
                 ModeloDoVeiculo = Console.ReadLine();
 
-                return pesquisaDeVeiculo(ref ModeloDoVeiculo);
+                return pesquisaDeVeiculo(ref ModeloDoVeiculo);  
 
             }
 
