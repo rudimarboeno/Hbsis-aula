@@ -12,42 +12,22 @@ namespace SistemaBibliotecaOnline
         static void Main(string[] args)
         {
             CarregaBaseDeDados();
+            
 
-            MostrarSejaBemVindo();
+            var opcaoMenu = MenuPrincipal();
 
-            if (MenuInicial() == 1)
+            while(opcaoMenu !=3)
             {
-                Console.Clear();
+                if (opcaoMenu == 1)
+                    AlocarumLivro();
 
-                MostrarSejaBemVindo();
+                if (opcaoMenu == 2)
+                    DesalocarUmlivro();
 
-                Console.WriteLine("Menu - Alocação de livros");
-                Console.WriteLine("Digite o nome do livro a ser alocado:");
-
-                var nomedolivro = Console.ReadLine();
-                if (PesquisaLivroParaAlocacao(nomedolivro))
-                {
-                    Console.Clear();
-                    Console.WriteLine("Você deseja alocar o livro? sim (1) || não (0)");
-
-                    /*qual tecla precionada        converte para 1*/
-                    if (Console.ReadKey().KeyChar.ToString() == "1")
-                    {
-                        /*se digitar 1 entra nessa base*/
-                        AlocarLivro(nomedolivro);
-                        Console.Clear();
-                        Console.WriteLine("Livro Alocado com sucesso!");
-                    }
-                    else
-                        Console.Clear();
-                        Console.WriteLine("Listagem de livros:");
-
-                    for (int i = 0; i < baseDeLivros.GetLength(0); i++)
-                    {
-                        Console.WriteLine($"Nome: {baseDeLivros[i, 0]} Disponivel:{baseDeLivros[i, 1]}");
-                    }
-                }
+                opcaoMenu = MenuPrincipal();
             }
+
+            
             Console.ReadKey();
         }
         /// <summary>
@@ -67,12 +47,16 @@ namespace SistemaBibliotecaOnline
         /// Metodo que mostra o conteudo do menu e as opções de escolha.
         /// </summary>
         /// <returns>Retorna o valor do menu escolhido em um tipo inteiro</returns>
-        public static int MenuInicial()
+        public static int MenuPrincipal()
         {
+            Console.Clear();
+            MostrarSejaBemVindo();
+
             Console.WriteLine("Menu Inicial");
             Console.WriteLine("O que você deseja realizar?");
             Console.WriteLine("1- Alocar um livro");
-            Console.WriteLine("2- Sair do sistema");
+            Console.WriteLine("2- Devolver um livro");
+            Console.WriteLine("3- Sair do sistema");
             Console.WriteLine("Digite o número desejado:");
 
             int.TryParse(Console.ReadKey().KeyChar.ToString(), out int opcao);
@@ -111,16 +95,88 @@ namespace SistemaBibliotecaOnline
             return false;
         }
         /// <summary>
-        /// Metodo que aloca o livro de acordo com o parametro passado.
-        /// </summary>
-        /// <param name="nomeLivro">Nome do livro a ser alocado.</param>
-        public static void AlocarLivro(string nomeLivro)
+ /// Metodo para alterar a informação do alocação do livro.
+ /// </summary>
+ /// <param name="nomeLivro">Nome do livro</param>
+ /// <param name="alocar">Valor booleano que define se o livro esta ou não disponivel</param>
+        public static void AlocarLivro(string nomeLivro,bool alocar)
         {
             for (int i = 0; i < baseDeLivros.GetLength(0); i++)
             {
-                if (nomeLivro == baseDeLivros[i, 0])
-                    baseDeLivros[i,1]= "não";
+                if (nomeLivro == baseDeLivros[i, 0])              
+                  baseDeLivros[i, 1] = alocar? "não" : "sim";             
             }
+
+            Console.Clear();
+            MostrarSejaBemVindo();
+            Console.WriteLine("Livro atualizado com sucesso!");
+        }
+        /// <summary>
+        /// Metodo que carrega o conteudo inicial da aplicação do meu 1
+        /// </summary>
+        public static void AlocarumLivro()
+        {
+            MostrarMenuInicialLivros("Alocar um livro");
+
+            var nomedolivro = Console.ReadLine();
+            if (PesquisaLivroParaAlocacao(nomedolivro))
+            {
+                Console.Clear();
+                MostrarSejaBemVindo();
+                Console.WriteLine("Você deseja alocar o livro? sim (1) || não (0)");
+                                 
+                  /*se digitar 1 entra nessa base*/
+                AlocarLivro(nomedolivro, Console.ReadKey().KeyChar.ToString() == "1");
+                        
+                MostrarListaDeLivros();
+
+
+                Console.ReadKey();
+            }
+        }
+        /// <summary>
+        /// Metodo que mostra a lista de livros atualizado
+        /// </summary>
+        public static void MostrarListaDeLivros()
+        {
+            Console.WriteLine("Listagem de livros:");
+
+            for (int i = 0; i < baseDeLivros.GetLength(0); i++)
+            {
+                Console.WriteLine($"Nome: {baseDeLivros[i, 0]} Disponivel:{baseDeLivros[i, 1]}");
+            }
+
+        }
+        public static void DesalocarUmlivro()
+        {
+            MostrarMenuInicialLivros("Desalocar o livro");
+
+            MostrarListaDeLivros();
+
+            var nomedolivro = Console.ReadLine();
+            if (!PesquisaLivroParaAlocacao(nomedolivro))
+            {
+                Console.Clear();
+                //MostrarListaDeLivros();
+                Console.WriteLine("Você deseja desalocar o livro? sim (1) || não (0)");
+
+                /*se digitar 1 entra nessa base*/
+                AlocarLivro(nomedolivro, Console.ReadKey().KeyChar.ToString() == "0");
+
+                MostrarListaDeLivros();
+
+
+                Console.ReadKey();
+            }
+        }
+        public static void MostrarMenuInicialLivros(string operacao)
+        {
+            Console.Clear();
+
+            MostrarSejaBemVindo();
+
+            Console.WriteLine($"Menu - {operacao}");
+            Console.WriteLine("Digite o nome do livro a ser alocado:");
         }
     }
 }
