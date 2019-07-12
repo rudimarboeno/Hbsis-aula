@@ -80,11 +80,11 @@ namespace Sistema_de_Locadora_Ambev
         /// </summary>
         /// <param name="ModeloDoVeiculo">Nome do modelo a ser pesquisado</param>
         /// <returns>Vai retornar verdadeiro em caso do veiculo estiver disponivel para alocação</returns>
-        public static bool pesquisaDeVeiculo(string ModeloDoVeiculo)
+        public static bool? pesquisaDeVeiculo(ref string ModeloDoVeiculo)
         {
             for (int i = 0; i < baseDeVeiculos.GetLength(0); i++)
             {
-                if (ModeloDoVeiculo == baseDeVeiculos[i, 0])
+                if (CompararNomes(ModeloDoVeiculo, baseDeVeiculos[i, 0]))
                 {
                     Console.WriteLine($"O veiculo:{ModeloDoVeiculo}" +
                         $" pode ser alocado?:{baseDeVeiculos[i, 2]}");
@@ -92,8 +92,25 @@ namespace Sistema_de_Locadora_Ambev
                     return baseDeVeiculos[i, 2] == "sim";
                 }
             }
+            Console.WriteLine("");
+            Console.WriteLine("Nenhum veiculo encontrado deseja realizar outra operação novamente?");
+            Console.WriteLine("");
+            Console.WriteLine("Digite o número da opção desejada: sim(1) || não(0)");
+            Console.WriteLine("");
 
-            return false;
+
+            int.TryParse(Console.ReadKey().KeyChar.ToString(),out int opcao);
+    
+            if (opcao == 1)
+            {
+                Console.WriteLine("Digite o nome do veiculo a ser pesquisado:");
+                ModeloDoVeiculo = Console.ReadLine();
+
+                return pesquisaDeVeiculo(ref ModeloDoVeiculo);
+
+            }
+
+            return null;
         }
         /// <summary>
         /// Metodo que aloca o veiculo de acordo com o parametro passado
@@ -103,14 +120,17 @@ namespace Sistema_de_Locadora_Ambev
         {
             for (int i = 0; i < baseDeVeiculos.GetLength(0); i++)
             {
-                if (ModeloDoVeiculo == baseDeVeiculos[i, 0])
-                    baseDeVeiculos[i, 2] = alocar? "não" : "sim";
+                if (CompararNomes(ModeloDoVeiculo, baseDeVeiculos[i, 0]))
+                {
+                    baseDeVeiculos[i, 2] = alocar ? "não" : "sim";
+                }
             }
             Console.Clear();
             MostrarSejaBemVindo();
             Console.WriteLine("\\///\\///\\///\\///\\///\\///\\///\\///\\////\\\\////\\/");
             Console.WriteLine("\\\\////\\\\Lista atualizado com SUCESSO! \\////\\\\");
             Console.WriteLine("\\///\\///\\///\\///\\///\\///\\///\\///\\////\\\\////\\/");
+            Console.WriteLine("");
         }
         /// <summary>
         /// Metodo que carrega o conteudo inicial da aplicação  do meu 1
@@ -120,7 +140,9 @@ namespace Sistema_de_Locadora_Ambev
             MostrarMenuInicial("Alocar um veiculo");
 
             var ModeloDoVeiculo = Console.ReadLine();
-            if (pesquisaDeVeiculo(ModeloDoVeiculo))
+            var resultadoPesquisa = pesquisaDeVeiculo(ref ModeloDoVeiculo);
+
+            if (resultadoPesquisa != null && resultadoPesquisa == true)
             {
                 Console.Clear();
                 MostrarSejaBemVindo();
@@ -143,7 +165,9 @@ namespace Sistema_de_Locadora_Ambev
             MostrarMenuInicial("Alocar Veiculo");
 
             var ModeloDoVeiculo = Console.ReadLine();
-            if (pesquisaDeVeiculo(ModeloDoVeiculo))
+            var resultadoPesquisa = pesquisaDeVeiculo(ref ModeloDoVeiculo);
+
+            if (resultadoPesquisa != null && resultadoPesquisa == true)
             {
                 Console.Clear();
                 MostrarSejaBemVindo();
@@ -163,6 +187,7 @@ namespace Sistema_de_Locadora_Ambev
         public static void MostrarListaVeiculo()
         {
             Console.WriteLine("Lisa de Veiculos:");
+
             for (int i = 0; i < baseDeVeiculos.GetLength(0); i++)
             {
                 Console.WriteLine($"Nome: {baseDeVeiculos[i, 0]} || ano:{baseDeVeiculos[i, 1]} || Disponivel:{baseDeVeiculos[i, 2]} " +
@@ -176,8 +201,9 @@ namespace Sistema_de_Locadora_Ambev
             MostrarListaVeiculo();
 
             var ModeloDoVeiculo = Console.ReadLine();
+            var resultadoPesquisa = pesquisaDeVeiculo(ref ModeloDoVeiculo);
 
-            if (!pesquisaDeVeiculo(ModeloDoVeiculo))
+            if (resultadoPesquisa != null && resultadoPesquisa == false)
             {
                 Console.Clear();
                 MostrarSejaBemVindo();
@@ -198,6 +224,14 @@ namespace Sistema_de_Locadora_Ambev
 
             Console.WriteLine($"Menu - {operacao}");
             Console.WriteLine("Digite o modelo do veiculo a ser alugado:");
+        }
+        public static bool CompararNomes(string primeiro, string segundo)
+        {
+            if (primeiro.ToLower().Replace(" ", "")
+                == segundo.ToLower().Replace(" ", ""))
+                return true;
+
+             return false;
         }
     }
 }
