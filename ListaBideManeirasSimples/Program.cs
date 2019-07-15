@@ -16,6 +16,17 @@ namespace ListaBideManeirasSimples
             //Aqui como estamos usando apenas uma referencia da nossa lista colocamos ref ao passar ela no metodo
             CarregaInformacoesElistaEmTela(ref listaDeNome);
 
+            //Após carregar as informações e mostrar em tela ele espera um comando
+            Console.ReadKey();
+
+            //Indicamos que o usuario precisa informar um número de identificação para pesquisar um registro.
+            Console.WriteLine("Informe o ID do registro a ser pesquisado.");
+            //Aqui como realizamos a pesquisa somente na chamada
+            //Passamos a nossa lista normalmente pois não iremos alterar a apenas pesquisar a informação
+            //Após a virgula temos o console readline que espera nosso identificadir unico
+            PesquisandoInformacoesNaNossaLista(listaDeNome, Console.ReadLine());
+
+            Console.ReadKey();
 
         }
         /// <summary>
@@ -44,8 +55,12 @@ namespace ListaBideManeirasSimples
 
             }
         }
-
-        public static void PesquisandoInformacoesNaNossaLista(ref string[,] arrayBi,string pID)
+        /// <summary>
+        /// Metodo que realiza a pesquisa pelo indentificador unico de nossa coleção
+        /// </summary>
+        /// <param name="arrayBi">Nossa coleção de informação</param>
+        /// <param name="pID">Nosso indentificador unico</param>
+        public static void PesquisandoInformacoesNaNossaLista(string[,] arrayBi,string pID)
         {
             for (int i = 0; i < arrayBi.GetLength(0); i++)
             {
@@ -61,7 +76,6 @@ namespace ListaBideManeirasSimples
             //Caso ele passe por esta linha identificamos que ele não encontrou resultados compativeis.
             Console.WriteLine("Infelizmente a busca pelo id não resultou em nenhuma informação");
         }
-
         
     }
    
