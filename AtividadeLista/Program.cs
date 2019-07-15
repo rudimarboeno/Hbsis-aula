@@ -36,18 +36,26 @@ namespace AtividadeLista
                 var idade = Console.ReadLine();
 
 
+
                 ListaDeNome[i, 0] = (IdParaLista++).ToString();
                 ListaDeNome[i, 1] = nome;
                 ListaDeNome[i, 2] = idade;
 
-                Console.WriteLine("Deseja inserir um novo registro? sim(1) || não(0)");
+                Console.WriteLine("Deseja inserir um novo registro? sim(1) || não(0) || Excluir(2)");
 
                 var continuar = Console.ReadKey().KeyChar.ToString();
 
                 if (continuar == "0")
                     break;
 
+                if(continuar == "2")
+                {
+                    Console.WriteLine("teste");
+                    Console.ReadLine();
+                }
+
                 AumentaTamanhoDaLista(ref ListaDeNome);
+
             }
 
             Console.WriteLine("Registro adicionado com sucesso, segue lista de informação adicionadas:");
@@ -73,7 +81,7 @@ namespace AtividadeLista
             {
                 var ListaCopia = ListaDeNome;
 
-                ListaDeNome = new string[ListaDeNome.GetLength(0) + 5, 2];
+                ListaDeNome = new string[ListaDeNome.GetLength(0) + 5, 3];
 
                 for (int i = 0; i < ListaCopia.GetLength(0); i++)
                 {
