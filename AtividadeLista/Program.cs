@@ -47,12 +47,16 @@ namespace AtividadeLista
 
                 if (continuar == "0")
                     break;
-
+                /*
                 if(continuar == "2")
-                {
-                    Console.WriteLine("teste");
+
+                    foreach(var ListaDeNome in IdParaLista)
+                    {
+                        list.Remove(ListaDeNome);
+                        
+                    }
                     Console.ReadLine();
-                }
+                */
 
                 AumentaTamanhoDaLista(ref ListaDeNome);
 
