@@ -80,6 +80,7 @@ namespace InsertAndRemoveInList
             //Aqui pegamos a idade da pessoa digitada pelo usuario do sistema
             var idade = Console.ReadLine();
 
+            AumentaTamanhoLista(ref baseDeDados);
             //Iniciamos o laço de repetição oara varrer nossa base de dados
             for (int i = 0; i < baseDeDados.GetLength(0); i++)
             {
@@ -145,10 +146,13 @@ namespace InsertAndRemoveInList
             Console.WriteLine("Area de remoção de registrp do sistema.");
 
             for (int i = 0; i < baseDeDados.GetLength(0); i++)
+            {
+                //Indentifica que so deve remover os valores ativos dentro do sistema
+                if(baseDeDados[i, 3] != "false")
                 Console.WriteLine($"ID:{baseDeDados[i, 0]} " +
                     $"- Nome:{baseDeDados[i, 1]}" +
                     $"- Idade:{baseDeDados[i, 2]}");
-
+            }
                 Console.WriteLine("Informe o id  do registro a ser removido:");
                 var id = Console.ReadLine();
 
