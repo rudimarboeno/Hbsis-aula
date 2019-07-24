@@ -155,19 +155,42 @@ order by 'teste' desc;
 
 --27-
 
-select sum(Quantidade) , Count(UsuInc) as 'Quantidade' 
-From Vendas as v
-where v.UsuInc = 1  
+select  ma.Nome,
+		COUNT(ma.Nome) as 'Quantidade' 
+from Vendas as ven
+ inner join Carros as  ca on ven.Carro = ca.Id
+ inner join Marcas as ma on ca.Marca = ma.Id
+ group by ma.Nome
+ order by 'Quantidade' desc;
+
+ --28-
+
+ select  ma.Nome,
+		SUM((ven.Valor)*(ven.Quantidade)) as 'Quantidade' 
+from Vendas as ven
+  inner join Carros as  ca on ven.Carro = ca.Id
+  inner join Marcas as ma on ca.Marca = ma.Id
+group by ma.Nome
 order by 'Quantidade' desc;
 
---28-
+--29
 
-select 
-		ma.Nome
-from Marcas as ma
-	inner join Vendas as ve on ma.Id = ve.Carro
-order by ma.Nome desc;
+select  ca.Modelo,
+	   SUM(ven.Quantidade) as 'Quantidade' 
+from Vendas as ven
+inner join Carros as  ca on ven.Carro = ca.Id
+inner join Marcas as ma on ca.Marca = ma.Id
+group by ca.Modelo
+order by 'Quantidade' desc;
 
---29-
 
+
+--30
+
+select  ca.Modelo,
+		SUM((ven.Valor)*(ven.Quantidade)) as 'Valor' 
+from Vendas as ven
+inner join Carros as  ca on ven.Carro = ca.Id
+group by ca.Modelo
+order by 'Quantidade' desc;
 
