@@ -18,10 +18,9 @@ namespace ListaBiSuperCompacta.BibliotecaListaBi
         {
             listaBi = new string[5, 2];
             //Ao chamar este metodo no contrutor nossa lista ja vai estar carregada
-            //ao iniciar a istancia "jogar para memoria"
+            //ao iniciar a istancia "jogar para memoria teste"
             CarregaListaBi();
         }
-
         public void CarregaListaBi()
         {
             for (int i = 0; i < listaBi.GetLength(0); i++)
