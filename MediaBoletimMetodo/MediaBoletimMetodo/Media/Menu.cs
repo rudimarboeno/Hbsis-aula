@@ -20,7 +20,7 @@ namespace MediaBoletimMetodo.Media
 
             for (int i = 0; i < BasedeDados.GetLength(0); i++)
             {
-                
+
                 Console.WriteLine("Informe o nome do aluno");
                 var nome = Console.ReadLine();
                 BasedeDados[i, 1] = nome;
@@ -46,34 +46,21 @@ namespace MediaBoletimMetodo.Media
                 var Frenquenci = Boletim.frequencia(totalAulas, numeroFaltas);
                 BasedeDados[i, 3] = Frenquenci.ToString();
 
-
-                if (BasedeDados[i, 0] != null)
-                    continue;
-
-                BasedeDados[i, 0] = (IndiceBaseDeDados++).ToString();
-                BasedeDados[i, 1] = nome;
-                BasedeDados[i, 2] = media.ToString();
-                BasedeDados[i, 3] = Frenquenci.ToString();
-                BasedeDados[i, 4] = "true";
-                break;
+                
+                    BasedeDados[i, 0] = (IndiceBaseDeDados++).ToString();
+                    BasedeDados[i, 1] = nome;
+                    BasedeDados[i, 2] = media.ToString();
+                    BasedeDados[i, 3] = Frenquenci.ToString();
+                    BasedeDados[i, 4] = Boletim.Retornasituacao(media,Frenquenci);         
+               
             }
 
-                Console.WriteLine("");
-                Console.WriteLine("Registro cadastrado com sucesso");
-                Console.WriteLine("");
-                Console.WriteLine("Para volta ao menu inicial aperte qual que botão");
-                Console.WriteLine("");
-                Console.ReadKey();
-
+                
         }
         
         public void MostraLista(string MostrarRegistroNativos = "false")
         {
             Console.WriteLine("Apresentação das informações dentro da base de dados");
-
-            if(MostrarRegistroNativos == "true")
-            Console.WriteLine("Lista de alunos no nosso sistema");
-            Console.WriteLine("");
 
             for (int i = 0; i < BasedeDados.GetLength(0); i++)
             {
@@ -81,7 +68,7 @@ namespace MediaBoletimMetodo.Media
                 Console.WriteLine($"ID: {BasedeDados[i,0]} || " +
                                   $"Nome do aluno: {BasedeDados[i, 1]} || " +
                                   $"Media: {BasedeDados[i, 2]} || " +
-                                  $"Frequencia: {BasedeDados[i, 3]}");
+                                  $"Frequencia: {BasedeDados[i, 3]}%");
             }
 
             Console.WriteLine("");
@@ -116,8 +103,10 @@ namespace MediaBoletimMetodo.Media
             {
                 if(BasedeDados[i, 0] != null && BasedeDados[i,0] == id)
                 {
-                    BasedeDados[i, 3] = "false";
-                                    
+                    BasedeDados[i, 1] = "";
+                    BasedeDados[i, 2] = "";
+                    BasedeDados[i, 3] = "";
+                    BasedeDados[i, 4] = "";
                 }
             }
 
