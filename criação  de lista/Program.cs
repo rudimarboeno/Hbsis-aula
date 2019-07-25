@@ -17,7 +17,7 @@ namespace criação__de_lista
 
             listaBi.LimpaLista();
 
-            listaBi.CarregandoListaBi(10);
+            listaBi.CarregandoListaBi();
 
             listaBi.CarregaLista();
 
