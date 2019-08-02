@@ -21,9 +21,7 @@ namespace DataGridView
         {
             // TODO: This line of code loads data into the 'querysInnerJoinDataSet1.DataTable1' table. You can move, or remove it, as needed.
             this.dataTable1TableAdapter.GetALlData(this.querysInnerJoinDataSet1.DataTable1);
-            // TODO: This line of code loads data into the 'querysInnerJoinDataSet1.Carros' table. You can move, or remove it, as needed.
-          //  this.carrosTableAdapter.CustomInativeValues(this.querysInnerJoinDataSet1.Carros);
-
+        
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

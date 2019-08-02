@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DataGridView.Adicionar;
+using DataGridView.Edicao;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,8 @@ namespace DataGridView
 {
     public partial class Form1 : Form
     {
+        private object fmEdicaoCarros;
+
         public Form1()
         {
             InitializeComponent();
@@ -59,6 +63,22 @@ namespace DataGridView
                         this.carrosTableAdapter1.DeleteQuery(carSelect.Id);
                         
                     }break;
+                case 1:
+                    {
+                        fmEdicaoCarros editCarro = new fmEdicaoCarros();
+                        editCarro.CarrosRow = carSelect;
+                        editCarro.ShowDialog();
+
+                        this.carrosTableAdapter1.Update(editCarro.CarrosRow);
+                        /*
+                            editCarro.CarrosRow.Modelo,
+                            editCarro.CarrosRow.Ano.ToString(),
+                            editCarro.CarrosRow.Marca,
+                            editCarro.CarrosRow.UsuInc,
+                            DateTime.Now,
+                            editCarro.CarrosRow.Id);*/
+                    }
+                    break;
 
             }
             this.carrosTableAdapter1.CustomQuery(this.querysInnerJoinDataSet1.Carros);
@@ -70,6 +90,28 @@ namespace DataGridView
             Lixeira lixo = new Lixeira();
             lixo.ShowDialog();
 
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            fmAdicionar formAdd = new fmAdicionar();
+
+            formAdd.ShowDialog();
+
+            if(string.IsNullOrEmpty(formAdd.carrosRow?.Modelo))
+
+            this.carrosTableAdapter1.Insert(
+                formAdd.carrosRow.Modelo,
+                formAdd.carrosRow.Ano,
+                formAdd.carrosRow.Marca,
+                true,
+                1,
+                1,
+                DateTime.Now,
+                DateTime.Now
+                );
+            //Atualiza
+            this.carrosTableAdapter1.Fill(this.querysInnerJoinDataSet1.Carros);
         }
     }
 }
