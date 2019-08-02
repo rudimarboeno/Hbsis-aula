@@ -33,6 +33,7 @@ namespace DataGridView.Adicionar
                 Modelo = textBox1.Text,
                 Ano = dateTimePicker1.Value,
                 Marca = (int)comboBox1.SelectedValue
+                //teste
             };
 
             this.Close();
