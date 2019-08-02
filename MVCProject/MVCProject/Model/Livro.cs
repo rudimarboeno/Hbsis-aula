@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MVCProject.Model
 {
-    public class Livro
+    public class Livro : Informacao
     {
         public int Id { get; set; }
         public int Registro { get; set; }
@@ -16,11 +16,7 @@ namespace MVCProject.Model
         public int Editora { get; set; }
         public string Sinope { get; set; }
         public string Observacoes { get; set; }
-        public bool Ativo { get; set; }
-        public int UsuInc { get; set; }
-        public int UsuAlt { get; set; }
-        public DateTime DatInc { get; set; }
-        public DateTime DatAlt { get; set; }
+     
 
     }
 }
