@@ -504,7 +504,7 @@ WHERE  (Ativo = 0)) TEMP</CommandText>
   <xs:element name="QuerysInnerJoinDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="QuerysInnerJoinDataSet1" msprop:Generator_UserDSName="QuerysInnerJoinDataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Carros" msprop:Generator_TableClassName="CarrosDataTable" msprop:Generator_TableVarName="tableCarros" msprop:Generator_RowChangedName="CarrosRowChanged" msprop:Generator_TablePropName="Carros" msprop:Generator_RowDeletingName="CarrosRowDeleting" msprop:Generator_RowChangingName="CarrosRowChanging" msprop:Generator_RowEvHandlerName="CarrosRowChangeEventHandler" msprop:Generator_RowDeletedName="CarrosRowDeleted" msprop:Generator_RowClassName="CarrosRow" msprop:Generator_UserTableName="Carros" msprop:Generator_RowEvArgName="CarrosRowChangeEvent">
+        <xs:element name="Carros" msprop:Generator_TableClassName="CarrosDataTable" msprop:Generator_TableVarName="tableCarros" msprop:Generator_TablePropName="Carros" msprop:Generator_RowDeletingName="CarrosRowDeleting" msprop:Generator_RowChangingName="CarrosRowChanging" msprop:Generator_RowEvHandlerName="CarrosRowChangeEventHandler" msprop:Generator_RowDeletedName="CarrosRowDeleted" msprop:Generator_UserTableName="Carros" msprop:Generator_RowChangedName="CarrosRowChanged" msprop:Generator_RowEvArgName="CarrosRowChangeEvent" msprop:Generator_RowClassName="CarrosRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -527,7 +527,7 @@ WHERE  (Ativo = 0)) TEMP</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Marcas" msprop:Generator_TableClassName="MarcasDataTable" msprop:Generator_TableVarName="tableMarcas" msprop:Generator_RowChangedName="MarcasRowChanged" msprop:Generator_TablePropName="Marcas" msprop:Generator_RowDeletingName="MarcasRowDeleting" msprop:Generator_RowChangingName="MarcasRowChanging" msprop:Generator_RowEvHandlerName="MarcasRowChangeEventHandler" msprop:Generator_RowDeletedName="MarcasRowDeleted" msprop:Generator_RowClassName="MarcasRow" msprop:Generator_UserTableName="Marcas" msprop:Generator_RowEvArgName="MarcasRowChangeEvent">
+        <xs:element name="Marcas" msprop:Generator_TableClassName="MarcasDataTable" msprop:Generator_TableVarName="tableMarcas" msprop:Generator_TablePropName="Marcas" msprop:Generator_RowDeletingName="MarcasRowDeleting" msprop:Generator_RowChangingName="MarcasRowChanging" msprop:Generator_RowEvHandlerName="MarcasRowChangeEventHandler" msprop:Generator_RowDeletedName="MarcasRowDeleted" msprop:Generator_UserTableName="Marcas" msprop:Generator_RowChangedName="MarcasRowChanged" msprop:Generator_RowEvArgName="MarcasRowChangeEvent" msprop:Generator_RowClassName="MarcasRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -548,7 +548,7 @@ WHERE  (Ativo = 0)) TEMP</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Usuarios" msprop:Generator_TableClassName="UsuariosDataTable" msprop:Generator_TableVarName="tableUsuarios" msprop:Generator_RowChangedName="UsuariosRowChanged" msprop:Generator_TablePropName="Usuarios" msprop:Generator_RowDeletingName="UsuariosRowDeleting" msprop:Generator_RowChangingName="UsuariosRowChanging" msprop:Generator_RowEvHandlerName="UsuariosRowChangeEventHandler" msprop:Generator_RowDeletedName="UsuariosRowDeleted" msprop:Generator_RowClassName="UsuariosRow" msprop:Generator_UserTableName="Usuarios" msprop:Generator_RowEvArgName="UsuariosRowChangeEvent">
+        <xs:element name="Usuarios" msprop:Generator_TableClassName="UsuariosDataTable" msprop:Generator_TableVarName="tableUsuarios" msprop:Generator_TablePropName="Usuarios" msprop:Generator_RowDeletingName="UsuariosRowDeleting" msprop:Generator_RowChangingName="UsuariosRowChanging" msprop:Generator_RowEvHandlerName="UsuariosRowChangeEventHandler" msprop:Generator_RowDeletedName="UsuariosRowDeleted" msprop:Generator_UserTableName="Usuarios" msprop:Generator_RowChangedName="UsuariosRowChanged" msprop:Generator_RowEvArgName="UsuariosRowChangeEvent" msprop:Generator_RowClassName="UsuariosRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -569,7 +569,7 @@ WHERE  (Ativo = 0)) TEMP</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Vendas" msprop:Generator_TableClassName="VendasDataTable" msprop:Generator_TableVarName="tableVendas" msprop:Generator_RowChangedName="VendasRowChanged" msprop:Generator_TablePropName="Vendas" msprop:Generator_RowDeletingName="VendasRowDeleting" msprop:Generator_RowChangingName="VendasRowChanging" msprop:Generator_RowEvHandlerName="VendasRowChangeEventHandler" msprop:Generator_RowDeletedName="VendasRowDeleted" msprop:Generator_RowClassName="VendasRow" msprop:Generator_UserTableName="Vendas" msprop:Generator_RowEvArgName="VendasRowChangeEvent">
+        <xs:element name="Vendas" msprop:Generator_TableClassName="VendasDataTable" msprop:Generator_TableVarName="tableVendas" msprop:Generator_TablePropName="Vendas" msprop:Generator_RowDeletingName="VendasRowDeleting" msprop:Generator_RowChangingName="VendasRowChanging" msprop:Generator_RowEvHandlerName="VendasRowChangeEventHandler" msprop:Generator_RowDeletedName="VendasRowDeleted" msprop:Generator_UserTableName="Vendas" msprop:Generator_RowChangedName="VendasRowChanged" msprop:Generator_RowEvArgName="VendasRowChangeEvent" msprop:Generator_RowClassName="VendasRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -586,7 +586,7 @@ WHERE  (Ativo = 0)) TEMP</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Tabela" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTabela" msprop:Generator_ColumnPropNameInRow="Tabela" msprop:Generator_ColumnPropNameInTable="TabelaColumn" msprop:Generator_UserColumnName="Tabela" minOccurs="0">
@@ -622,8 +622,8 @@ WHERE  (Ativo = 0)) TEMP</CommandText>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_Carros_Marcas" msdata:parent="Marcas" msdata:child="Carros" msdata:parentkey="Id" msdata:childkey="Marca" msprop:Generator_UserChildTable="Carros" msprop:Generator_ChildPropName="GetCarrosRows" msprop:Generator_UserRelationName="FK_Carros_Marcas" msprop:Generator_ParentPropName="MarcasRow" msprop:Generator_RelationVarName="relationFK_Carros_Marcas" msprop:Generator_UserParentTable="Marcas" />
-      <msdata:Relationship name="FK_Vendas_Carros" msdata:parent="Carros" msdata:child="Vendas" msdata:parentkey="Id" msdata:childkey="Carro" msprop:Generator_UserChildTable="Vendas" msprop:Generator_ChildPropName="GetVendasRows" msprop:Generator_UserRelationName="FK_Vendas_Carros" msprop:Generator_RelationVarName="relationFK_Vendas_Carros" msprop:Generator_UserParentTable="Carros" msprop:Generator_ParentPropName="CarrosRow" />
+      <msdata:Relationship name="FK_Carros_Marcas" msdata:parent="Marcas" msdata:child="Carros" msdata:parentkey="Id" msdata:childkey="Marca" msprop:Generator_UserChildTable="Carros" msprop:Generator_ChildPropName="GetCarrosRows" msprop:Generator_UserRelationName="FK_Carros_Marcas" msprop:Generator_RelationVarName="relationFK_Carros_Marcas" msprop:Generator_UserParentTable="Marcas" msprop:Generator_ParentPropName="MarcasRow" />
+      <msdata:Relationship name="FK_Vendas_Carros" msdata:parent="Carros" msdata:child="Vendas" msdata:parentkey="Id" msdata:childkey="Carro" msprop:Generator_UserChildTable="Vendas" msprop:Generator_ChildPropName="GetVendasRows" msprop:Generator_UserRelationName="FK_Vendas_Carros" msprop:Generator_ParentPropName="CarrosRow" msprop:Generator_RelationVarName="relationFK_Vendas_Carros" msprop:Generator_UserParentTable="Carros" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

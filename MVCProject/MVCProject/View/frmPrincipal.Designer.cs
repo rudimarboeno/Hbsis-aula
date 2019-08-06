@@ -87,6 +87,7 @@
             this.livrosToolStripMenuItem.Name = "livrosToolStripMenuItem";
             this.livrosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.livrosToolStripMenuItem.Text = "Livros";
+            this.livrosToolStripMenuItem.Click += new System.EventHandler(this.LivrosToolStripMenuItem_Click);
             // 
             // locaçõesToolStripMenuItem
             // 

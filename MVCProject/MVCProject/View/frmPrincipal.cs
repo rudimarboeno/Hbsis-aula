@@ -21,5 +21,11 @@ namespace MVCProject.View
         {
 
         }
+
+        private void LivrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form6 formUsuario = new Form6();
+            formUsuario.ShowDialog();
+        }
     }
 }

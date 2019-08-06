@@ -134,6 +134,7 @@
             this.button1.TabIndex = 8;
             this.button1.Text = "Adicionar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // frmAdicionarUsuario
             // 
@@ -154,6 +155,7 @@
             this.DoubleBuffered = true;
             this.Name = "frmAdicionarUsuario";
             this.Text = "frmAdicionarUsuario";
+            this.Load += new System.EventHandler(this.FrmAdicionarUsuario_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
