@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Button Content="Nuclear" HorizontalAlignment="Left" Margin="23,10,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Click="Button_Click" Content="Nuclear" HorizontalAlignment="Left" Margin="23,10,0,0" VerticalAlignment="Top" Width="75"/>
         <Label Content="logoff" Background="White" HorizontalAlignment="Right"></Label>
     </Grid>
 </UserControl>

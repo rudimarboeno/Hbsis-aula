@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WPFApp.Views
+namespace CalculadoraWpf.Views
 {
     /// <summary>
-    /// Interaction logic for ucLogin.xaml
+    /// Interaction logic for UCLogin.xaml
     /// </summary>
-    public partial class ucLogin : UserControl
+    public partial class UCLogin : UserControl
     {
-        public ucLogin()
+        public UCLogin()
         {
             InitializeComponent();
         }
@@ -29,8 +29,9 @@ namespace WPFApp.Views
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Teste(tbxLogin.Text,tbxSenha.Text);
+            Teste(tbxLogin.Text, tbxSenha.Text);
         }
+
         public void Teste(string login, string senha)
         {
             if (login == "admin" && senha == "admin")
@@ -39,8 +40,9 @@ namespace WPFApp.Views
                 loginCorrect(null, new EventArgs());
             }
             else
-                MessageBox.Show("Gabriel Manja Rola");
+                MessageBox.Show("Gabriel Moscão");
         }
 
+     
     }
 }

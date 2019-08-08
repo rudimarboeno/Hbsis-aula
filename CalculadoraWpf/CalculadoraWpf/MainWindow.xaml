@@ -1,0 +1,15 @@
+﻿<Window x:Class="CalculadoraWpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CalculadoraWpf"
+        xmlns:y="clr-namespace:CalculadoraWpf.Views"
+        mc:Ignorable="d"
+        Title="Calculadora" Height="450" Width="800">
+    <Grid RenderTransformOrigin="0.485,0.516">
+        <y:UCLogin x:Name="UCLoginForm" loginCorrect="UCLoginForm_loginCorrect" ></y:UCLogin>
+        <y:UcCalculos x:Name="UcCalculosForm" Visibility="Hidden"></y:UcCalculos>    
+    
+    </Grid>
+</Window>
