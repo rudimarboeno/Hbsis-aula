@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="FormWpf.FormValidacoes"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FormWpf"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="1"/>
+                <GradientStop Color="#FFB7DCFF" Offset="0.778"/>
+                <GradientStop Color="#FF191F24" Offset="0.983"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Label Content="Nome:" HorizontalAlignment="Left" Margin="85,10,0,0" VerticalAlignment="Top" Width="231" Height="50" FontSize="24" FontFamily="Segoe UI Semibold"/>
+        <Label Content="Telefone:" HorizontalAlignment="Left" Margin="85,150,0,0" VerticalAlignment="Top" Width="231" Height="35" FontSize="24" FontFamily="Segoe UI Semibold"/>
+        <Label Content="E-mail:" HorizontalAlignment="Left" Margin="85,275,0,0" VerticalAlignment="Top" Width="231" Height="35" FontSize="24" FontFamily="Segoe UI Semibold"/>
+        <Button Content="Salvar;" Click="Button_Click" HorizontalAlignment="Left" Margin="475,330,0,0" VerticalAlignment="Top" Width="235" Height="60" FontSize="36" FontFamily="Yu Gothic UI Semibold"  BorderBrush="#FF010201" Foreground="White" Background="#FF2E58E7">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="6" Color="#FF2752C8" ShadowDepth="8"/>
+            </Button.Effect>
+        </Button>
+        <TextBox Name="tbxNome" HorizontalAlignment="Left" Height="60" Margin="85,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="315"  FontSize="24"/>
+        <TextBox Name="tbxTelefone" HorizontalAlignment="Left" Height="60" Margin="85,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="315" FontSize="24"/>
+        <TextBox Name="tbxEmail" HorizontalAlignment="Left" Height="60" Margin="85,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="315" FontSize="24"/>
+
+    </Grid>
+</UserControl>
