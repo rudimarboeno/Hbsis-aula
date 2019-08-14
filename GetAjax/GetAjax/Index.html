@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="Content/bootstrap-grid.css" rel="stylesheet" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-12" style="background-color:orange; height:100px; text-align:center; padding:20px;">
+            <label for="Accept">
+                <p>
+                <h5>Informe seu cep:</h5>
+                </p>
+            </label>
+            <input class="btn btn-outline-danger" id="Accept" type="number" />
+            <input class="btn btn-outline-danger" id="Button1" type="button" value="Validar" />
+        </div>
+
+        <div class="col-md-12" style="padding:50px;">
+            <textarea id="TextAreal1" rows="12" cols="20" style="width:100%;"></textarea>
+        </div>
+
+    </div>
+
+    <script src="Scripts/bootstrap.bundle.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/jquery-3.4.1.js"></script>
+
+    <script>
+         
+        $(document).ready(function () {
+
+            $('#Button1').click(function () {
+                $.get("https://viacep.com.br/ws/"+Accept.value+"/json/", function (data, status) {
+
+                    
+                    alert("Data: " + data + " \nStatus: " + status);
+
+                    var textJson = JSON.stringify(data, undefined, 4);
+
+                    $('#TextAreal1').append(textJson);
+                });
+            });
+      });
+    </script>
+</body>
+</html>
