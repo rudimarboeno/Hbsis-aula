@@ -79,6 +79,7 @@ namespace WEBAPIRESTFULL.Controllers
         {
             if (!ModelState.IsValid)
             {
+                if(ModelState.Keys.First().ToString() != "usuarios.Id")
                 return BadRequest(ModelState);
             }
 
