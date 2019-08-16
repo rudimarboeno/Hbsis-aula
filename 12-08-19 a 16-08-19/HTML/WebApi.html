@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Projeto web Api</title>
+
+    <!-- Include *at least* the core style and default theme -->
+    <link href="css/prettify.css" rel="stylesheet">
+    <link href="css/hemisu-light.css" rel="stylesheet">
+
+    <link href="css/screen.css" rel="stylesheet" media="screen">
+
+    <link  href="css/classic.css" rel="stylesheet" media="screen">
+
+</head>
+<body>
+    <div >
+        <form id="formUsu" method="post">
+            <input type="text"   name="tbxIs"     placeholder="Id"     />
+            <input type="text"   name="tbxNome"   placeholder="Nome:"  />
+            <input type="text"   name="tbxAtivo"  placeholder="Ativo"  />
+            <input type="text"   name="tbxUsuInc" placeholder="UsuInc" />
+            <input type="text"   name="tbxUsuAlt" placeholder="UsuAlt" />
+            <input type="text"   name="tbxDatInc" placeholder="DatInc" />
+            <input type="text"   name="tbxDatAlt" placeholder="DatAlt" />
+            <input type="submit" value="Cadastrar" />
+        </form>
+    </div>
+    <div id="exemplo">
+
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   
+    <script type="text/javascript"
+            src="jquery.columns.min.js"></script>
+
+    <script>
+
+        $('Cadastrar').click(function () {
+            $.post("http://localhost:62141/Api/Usuarops",
+                $("Cadastrar").serialize(),
+                function (value) {
+                    GridRefresh();
+                },"json");
+
+       
+
+        function GridRefresh() {
+
+                $.get('http://localhost:62141/Api/Usuarios', function (dataApi) {
+                $('#exemplo').columns({ data: dataApi });
+            });
+        }
+    </script>
+
+
+</body>
+</html>
