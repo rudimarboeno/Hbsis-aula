@@ -22,7 +22,9 @@ namespace WEBAPIRESTFULL.Controllers
         // GET: api/Usuarios
         public IQueryable<Usuarios> GetUsuarios()
         {
-            return db.Usuarios.Where(x => x.Ativo == true);
+             return db.Usuarios.Where(x => x.Ativo == true);
+             
+            //return db.Usuarios;
         }
 
         // GET: api/Usuarios/5
@@ -34,6 +36,13 @@ namespace WEBAPIRESTFULL.Controllers
             {
                 return NotFound();
             }
+            if (MathFile.GetInstace().QunatidadeUsuarios() > 5)
+                return Ok(new Usuarios()
+                {
+                    Nome = "teste",
+                    Email = "teste@teste.com",
+                    Ativo = true
+                });
 
             return Ok(usuarios);
         }
