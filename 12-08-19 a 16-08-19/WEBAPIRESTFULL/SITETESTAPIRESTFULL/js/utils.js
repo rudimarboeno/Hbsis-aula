@@ -36,11 +36,15 @@ jQuery(document).ready(function(){
         $.ajax(settings).done(function (response) {
            window[callStr](response);
         });
+
+        $.each(this,function(index,value){
+          $('[name=\''+ value.name +'\']').val("");
+        });
         
         return false;
     });
 
-    jQuery('#btnCancelar').click(function(){
+    jQuery('.btn-cancel-form').click(function(){
       var form = $(this).parent().parent().parent()[0];
 
       $.each(form,function(index,value){
@@ -92,6 +96,7 @@ function SetGridClickEvents(){
         $.each(response,function(index,value){
 
            $('input[name="'+ index + '"]').val(value);
+           $('select[name="'+ index +'"]').val(value);
         });
 
         $('#btnCancelar').show();
