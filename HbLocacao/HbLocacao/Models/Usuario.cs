@@ -9,7 +9,7 @@ namespace HbLocacao.Models
     public class Usuario : UserControls
     {
         [Key]
-        public int Id { get; set; }
+        public int UsuarioId { get; set; }
         public string Nome { get; set; }
 
     }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -7,7 +8,8 @@ namespace HbLocacao.Models
 {
     public class MarcaMoto
     {
-        public int Id { get; set; }
+        [Key]
+        public int MotoId { get; set; }
         public string Marcamotos { get; set; }
         public string Descricao { get; set; }
     }

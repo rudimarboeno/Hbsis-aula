@@ -173,39 +173,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908261731082_Usuarios.cs" />
-    <Compile Include="Migrations\201908261731082_Usuarios.Designer.cs">
-      <DependentUpon>201908261731082_Usuarios.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908261742285_TipoDeVeiculos.cs" />
-    <Compile Include="Migrations\201908261742285_TipoDeVeiculos.Designer.cs">
-      <DependentUpon>201908261742285_TipoDeVeiculos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908261755414_MarcaAutomovels.cs" />
-    <Compile Include="Migrations\201908261755414_MarcaAutomovels.Designer.cs">
-      <DependentUpon>201908261755414_MarcaAutomovels.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908261801218_ModeloAutomovels.cs" />
-    <Compile Include="Migrations\201908261801218_ModeloAutomovels.Designer.cs">
-      <DependentUpon>201908261801218_ModeloAutomovels.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908261802376_MarcaMoto.cs" />
-    <Compile Include="Migrations\201908261802376_MarcaMoto.Designer.cs">
-      <DependentUpon>201908261802376_MarcaMoto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908261803421_ModeoMoto.cs" />
-    <Compile Include="Migrations\201908261803421_ModeoMoto.Designer.cs">
-      <DependentUpon>201908261803421_ModeoMoto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908261806268_CoresVeiculos.cs" />
-    <Compile Include="Migrations\201908261806268_CoresVeiculos.Designer.cs">
-      <DependentUpon>201908261806268_CoresVeiculos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContextDB.cs" />
     <Compile Include="Models\CoresVeiculos.cs" />
     <Compile Include="Models\CustomNameValidator.cs" />
     <Compile Include="Models\CustomValidField.cs" />
+    <Compile Include="Models\Locacao.cs" />
     <Compile Include="Models\MarcaAutomovel.cs" />
     <Compile Include="Models\MarcaMoto.cs" />
     <Compile Include="Models\ModeloAltomovel.cs" />
@@ -268,6 +240,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -297,29 +270,6 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201908261731082_Usuarios.resx">
-      <DependentUpon>201908261731082_Usuarios.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908261742285_TipoDeVeiculos.resx">
-      <DependentUpon>201908261742285_TipoDeVeiculos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908261755414_MarcaAutomovels.resx">
-      <DependentUpon>201908261755414_MarcaAutomovels.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908261801218_ModeloAutomovels.resx">
-      <DependentUpon>201908261801218_ModeloAutomovels.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908261802376_MarcaMoto.resx">
-      <DependentUpon>201908261802376_MarcaMoto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908261803421_ModeoMoto.resx">
-      <DependentUpon>201908261803421_ModeoMoto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908261806268_CoresVeiculos.resx">
-      <DependentUpon>201908261806268_CoresVeiculos.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
