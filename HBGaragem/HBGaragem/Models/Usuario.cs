@@ -11,6 +11,12 @@ namespace HBGaragem.Models
         [Key]
         public int Id { get; set; }
         public string Nome { get; set; }
+        public bool ResidoFora { get; set; }
+        public bool Carona { get; set; }
+        public bool PCD { get; set; }
+        public virtual  TermosDeUso TermosDeUso { get; set; }
+
+        
 
     }
 }

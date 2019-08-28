@@ -6,12 +6,12 @@ using System.Web;
 
 namespace HBGaragem.Models
 {
-    public class Modelos
+    public class DetalhesVeiculos
     {
         [Key]
         public int Id { get; set; }
-        public string Descricao { get; set; }
-        public virtual TipodeVeiculo TipodeVeiculo { get; set; }
-        public virtual Marcas Marcas { get; set; }
+        public string Cores { get; set; }
+        public string Placa { get; set; }
+        public virtual TipodeVeiculo TipoDeVeiculo { get; set; }
     }
 }

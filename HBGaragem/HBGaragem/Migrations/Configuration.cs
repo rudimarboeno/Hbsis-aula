@@ -13,7 +13,7 @@ namespace HBGaragem.Migrations
         {
             AutomaticMigrationsEnabled = false;
         }
-        
+
         protected override void Seed(ContextDB context)
         {
             var TipoVeiculos = new List<TipodeVeiculo>()

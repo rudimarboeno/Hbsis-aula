@@ -14,6 +14,10 @@ namespace HBGaragem.Models
         public DbSet<Locacao> Locacaos { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
 
-        public DbSet<CoresVeiculos> CoresVeiculos { get; set; }
+        public DbSet<DetalhesVeiculos> CoresVeiculos { get; set; }
+
+        public DbSet<PeriodoLocacao> PeriodoLocacaos { get; set; }
+
+        public System.Data.Entity.DbSet<HBGaragem.Models.TermosDeUso> TermosDeUsoes { get; set; }
     }
 }
