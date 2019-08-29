@@ -6,11 +6,12 @@ using System.Web;
 
 namespace HBGaragem.Models
 {
+
     public class TipodeVeiculo
     {
-        [Key]
+       [Key]
         public int Id { get; set; }
         public string Descricao { get; set; }
-        public virtual Usuario Usuario { get; set; }
+  
     }
 }

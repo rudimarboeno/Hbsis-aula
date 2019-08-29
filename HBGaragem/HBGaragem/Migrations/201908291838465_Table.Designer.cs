@@ -13,7 +13,7 @@ namespace HBGaragem.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201908281849075_Table"; }
+            get { return "201908291838465_Table"; }
         }
         
         string IMigrationMetadata.Source

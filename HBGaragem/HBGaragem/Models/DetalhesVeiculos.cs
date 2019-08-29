@@ -11,7 +11,5 @@ namespace HBGaragem.Models
         [Key]
         public int Id { get; set; }
         public string Cores { get; set; }
-        public string Placa { get; set; }
-        public virtual TipodeVeiculo TipoDeVeiculo { get; set; }
     }
 }

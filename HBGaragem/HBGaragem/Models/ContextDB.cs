@@ -19,5 +19,7 @@ namespace HBGaragem.Models
         public DbSet<PeriodoLocacao> PeriodoLocacaos { get; set; }
 
         public System.Data.Entity.DbSet<HBGaragem.Models.TermosDeUso> TermosDeUsoes { get; set; }
+
+      
     }
 }

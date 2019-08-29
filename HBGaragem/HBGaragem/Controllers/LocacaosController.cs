@@ -80,8 +80,16 @@ namespace HBGaragem.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.Locacaos.Add(locacao);
-            await db.SaveChangesAsync();
+            Locacao Teste = new Locacao();
+
+            if (Teste.Placa != null)
+            {
+                
+            }
+            
+                db.Locacaos.Add(locacao);
+                await db.SaveChangesAsync();
+            
 
             return CreatedAtRoute("DefaultApi", new { id = locacao.Id }, locacao);
         }

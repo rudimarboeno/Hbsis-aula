@@ -10,8 +10,6 @@ namespace HBGaragem.Models
     {
        [Key]
         public int Id { get; set; }
-        public virtual Usuario Usuario { get; set; }
-        public virtual TipodeVeiculo TipodeVeiculo { get; set; }
 
         [Display(Name = "Data Inicio:")]
         [DataType(DataType.Date)]
