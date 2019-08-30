@@ -10,8 +10,13 @@ namespace HBGaragem.Models
     {
         [Key]
         public int Id { get; set; }
+
+        [CustomValidFields(Enums.ValidFields.ValidaNome)]
         public string Nome { get; set; }
+
+        [CustomValidFields(Enums.ValidFields.ValidaEmail)]
         public string Email { get; set; }
+
         public bool ResidoFora { get; set; }
         public bool Carona { get; set; }
         public bool PCD { get; set; }

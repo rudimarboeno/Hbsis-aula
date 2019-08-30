@@ -6,7 +6,7 @@ using System.Web;
 
 namespace HBGaragem.Models
 {
-    public class DetalhesVeiculos
+    public class DetalhesVeiculo
     {
         [Key]
         public int Id { get; set; }

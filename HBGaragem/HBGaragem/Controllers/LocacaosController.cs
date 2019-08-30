@@ -80,16 +80,10 @@ namespace HBGaragem.Controllers
                 return BadRequest(ModelState);
             }
 
-            Locacao Teste = new Locacao();
+            locacao.Status = Enums.Status.EM_APROVACAO;
 
-            if (Teste.Placa != null)
-            {
-                
-            }
-            
-                db.Locacaos.Add(locacao);
-                await db.SaveChangesAsync();
-            
+            db.Locacaos.Add(locacao);
+            await db.SaveChangesAsync();
 
             return CreatedAtRoute("DefaultApi", new { id = locacao.Id }, locacao);
         }

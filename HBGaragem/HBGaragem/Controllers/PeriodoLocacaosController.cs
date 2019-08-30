@@ -80,6 +80,7 @@ namespace HBGaragem.Controllers
                 return BadRequest(ModelState);
             }
 
+
             db.PeriodoLocacaos.Add(periodoLocacao);
             await db.SaveChangesAsync();
 

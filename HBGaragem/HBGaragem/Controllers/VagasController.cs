@@ -13,45 +13,44 @@ using HBGaragem.Models;
 
 namespace HBGaragem.Controllers
 {
-    public class MarcasController : ApiController
+    public class VagasController : ApiController
     {
         private ContextDB db = new ContextDB();
 
-        // GET: api/Marcas
-        public IQueryable<Marcas> GetMarcas()
+        // GET: api/Vagas
+        public IQueryable<Vagas> GetVagas()
         {
-
-            return db.Marcas;
+            return db.Vagas;
         }
 
-        // GET: api/Marcas/5
-        [ResponseType(typeof(Marcas))]
-        public async Task<IHttpActionResult> GetMarcas(int id)
+        // GET: api/Vagas/5
+        [ResponseType(typeof(Vagas))]
+        public async Task<IHttpActionResult> GetVagas(int id)
         {
-            Marcas marcas = await db.Marcas.FindAsync(id);
-            if (marcas == null)
+            Vagas vagas = await db.Vagas.FindAsync(id);
+            if (vagas == null)
             {
                 return NotFound();
             }
 
-            return Ok(marcas);
+            return Ok(vagas);
         }
 
-        // PUT: api/Marcas/5
+        // PUT: api/Vagas/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutMarcas(int id, Marcas marcas)
+        public async Task<IHttpActionResult> PutVagas(int id, Vagas vagas)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != marcas.Id)
+            if (id != vagas.Id)
             {
                 return BadRequest();
             }
 
-            db.Entry(marcas).State = EntityState.Modified;
+            db.Entry(vagas).State = EntityState.Modified;
 
             try
             {
@@ -59,7 +58,7 @@ namespace HBGaragem.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!MarcasExists(id))
+                if (!VagasExists(id))
                 {
                     return NotFound();
                 }
@@ -72,35 +71,35 @@ namespace HBGaragem.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Marcas
-        [ResponseType(typeof(Marcas))]
-        public async Task<IHttpActionResult> PostMarcas(Marcas marcas)
+        // POST: api/Vagas
+        [ResponseType(typeof(Vagas))]
+        public async Task<IHttpActionResult> PostVagas(Vagas vagas)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Marcas.Add(marcas);
+            db.Vagas.Add(vagas);
             await db.SaveChangesAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = marcas.Id }, marcas);
+            return CreatedAtRoute("DefaultApi", new { id = vagas.Id }, vagas);
         }
 
-        // DELETE: api/Marcas/5
-        [ResponseType(typeof(Marcas))]
-        public async Task<IHttpActionResult> DeleteMarcas(int id)
+        // DELETE: api/Vagas/5
+        [ResponseType(typeof(Vagas))]
+        public async Task<IHttpActionResult> DeleteVagas(int id)
         {
-            Marcas marcas = await db.Marcas.FindAsync(id);
-            if (marcas == null)
+            Vagas vagas = await db.Vagas.FindAsync(id);
+            if (vagas == null)
             {
                 return NotFound();
             }
 
-            db.Marcas.Remove(marcas);
+            db.Vagas.Remove(vagas);
             await db.SaveChangesAsync();
 
-            return Ok(marcas);
+            return Ok(vagas);
         }
 
         protected override void Dispose(bool disposing)
@@ -112,9 +111,9 @@ namespace HBGaragem.Controllers
             base.Dispose(disposing);
         }
 
-        private bool MarcasExists(int id)
+        private bool VagasExists(int id)
         {
-            return db.Marcas.Count(e => e.Id == id) > 0;
+            return db.Vagas.Count(e => e.Id == id) > 0;
         }
     }
 }

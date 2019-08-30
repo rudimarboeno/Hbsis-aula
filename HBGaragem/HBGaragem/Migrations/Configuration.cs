@@ -14,8 +14,28 @@ namespace HBGaragem.Migrations
             AutomaticMigrationsEnabled = false;
         }
 
+
         protected override void Seed(ContextDB context)
         {
+
+            var Cores = new List<DetalhesVeiculo>()
+            {
+                new DetalhesVeiculo{Cores = "Braco"},
+                new DetalhesVeiculo{Cores = "Preto"},
+                new DetalhesVeiculo{Cores = "Prata"},
+                new DetalhesVeiculo{Cores = "Cinza"},
+                new DetalhesVeiculo{Cores = "Vermelho"},
+                new DetalhesVeiculo{Cores = "Marrom/Bege"},
+                new DetalhesVeiculo{Cores = "Azul"},
+                new DetalhesVeiculo{Cores = "Verde"},
+                new DetalhesVeiculo{Cores = "Amarelo/Dourado"},
+                new DetalhesVeiculo{Cores = "Outras"}
+            };
+
+            Cores.ForEach(s => context.DetalhesVeiculos.AddOrUpdate(P => P.Cores, s));
+            context.SaveChanges();
+
+
             var TipoVeiculos = new List<TipodeVeiculo>()
             {
                 //Descrica vem to tipo de veiculo

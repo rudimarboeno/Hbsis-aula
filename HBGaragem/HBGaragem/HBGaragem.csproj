@@ -212,7 +212,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Controllers\DetalhesVeiculosController.cs" />
+    <Compile Include="Controllers\DetalhesVeiculoesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocacaosController.cs" />
     <Compile Include="Controllers\MarcasController.cs" />
@@ -221,18 +221,22 @@
     <Compile Include="Controllers\TermosDeUsoesController.cs" />
     <Compile Include="Controllers\TipodeVeiculoesController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
+    <Compile Include="Controllers\VagasController.cs" />
+    <Compile Include="Controllers\VeiculoesController.cs" />
     <Compile Include="Enums\ValidFields.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908291838465_Table.cs" />
-    <Compile Include="Migrations\201908291838465_Table.Designer.cs">
-      <DependentUpon>201908291838465_Table.cs</DependentUpon>
+    <Compile Include="Migrations\201908301659476_Table.cs" />
+    <Compile Include="Migrations\201908301659476_Table.Designer.cs">
+      <DependentUpon>201908301659476_Table.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContextDB.cs" />
     <Compile Include="Models\CustomValidFields.cs" />
-    <Compile Include="Models\DetalhesVeiculos.cs" />
+    <Compile Include="Models\DetalhesVeiculo.cs" />
+    <Compile Include="Models\Vagas.cs" />
+    <Compile Include="Models\Veiculo.cs" />
     <Compile Include="Models\Locacao.cs" />
     <Compile Include="Models\Marcas.cs" />
     <Compile Include="Models\Modelos.cs" />
@@ -328,8 +332,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201908291838465_Table.resx">
-      <DependentUpon>201908291838465_Table.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908301659476_Table.resx">
+      <DependentUpon>201908301659476_Table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
